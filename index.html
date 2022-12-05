@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <main class="main">
+            <div class="main__item">
+                <h1 class="main__title">Украшения собственного производства</h1>
+                <p class="main__text">Все изделия создаются с любовью для&nbsp;каждого клиента</p>
+                <a href="#cost" class="link">Сделать расчет и заказ</a>
+            </div>
+            <div class="main__images">
+                <svg width="352" height="536">
+                    <pattern id="pattern" width="100%" height="100%">
+                       <image xlink:href="images/main.jpg" width="352" height="536" preserveAspectRatio="xMidYMin slice"></image>
+                    </pattern>
+                    <path d="M0 0.204529H182.212C275.548 0.204529 351.212 75.8684 351.212 169.205V537H176C78.7979 537 0 458.202 0 361V0.204529Z" fill="url(#pattern)"/>
+                 </svg>
+                 <svg width="233" height="318">
+                    <pattern id="patternMin" width="100%" height="100%">
+                       <image xlink:href="images/main-min.jpg" width="233" height="318" preserveAspectRatio="xMidYMin slice"></image>
+                    </pattern>
+                    <path d="M0 0H112.227C179.053 0 233.227 54.1735 233.227 121V319H0V0Z" fill="url(#patternMin)"/>
+                 </svg>
+            </div>
+        </main>
+        <section class="products">
+            <h2 class="title-h2">Наши изделия</h2>
+            <div class="grid">
+                <div class="grid__cover">
+                    <img src="images/products/01.jpg" alt="">
+                </div>
+                <div class="grid__cover">
+                    <img src="images/products/02.jpg" alt="">
+                </div>
+                <div class="grid__cover">
+                    <img src="images/products/03.jpg" alt="">
+                </div>
+                <div class="grid__cover">
+                    <img src="images/products/04.jpg" alt="">
+                </div>
+            </div>
+        </section>
+        <div class="cost" id="cost">
+            <div class="cost__title">
+                <svg class="circle" width="200" height="200" viewBox="0 0 200 200">
+                    <path id="circleShape" class="circle__shape" d="M 20, 100 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" fill="none"></path>
+                    <path class="circle__arrow" d="M 75 100 L 125 100 L 110 85 M 125 100 L 110 115" fill="none" stroke="#2B2024" stroke-width="2"></path>
+                    <text class="circle__text">
+                        <textPath href="#circleShape">
+                            Рассчитать стоимость
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+            <div class="cost__calc">
+                <form class="form">
+                    <p class="form__text">Выберите изделие:</p>
+                    <select id="selectProduct" class="form__select">
+                        <option value="0" selected disabled>Выбрать из списка</option>
+                        <option value="1000">Браслет (1000 ₽)</option>
+                        <option value="1500">Кольцо (1500 ₽)</option>
+                        <option value="2000">Серьги (2000 ₽)</option>
+                    </select>
+                    <p class="form__text">Укажите количество:</p>
+                    <input id="quantityProduct" class="form__input" type="number" value="0" min="0">
+                    <button type="button" class="link" id="btnProduct">Рассчитать</button>
+                </form>
+                <div id="infoProduct" class="total" style="display:none;">
+                    <p class="total__price">Итог: <span id="priceProduct"></span> ₽</p>
+                    <p class="total__info">Оставьте заявку по почте: <a href="mailto:order@jewelery.com" class="total__email">order@jewelery.com</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="scripts/script.js"></script>
+</body>
+</html>
